@@ -1,0 +1,14 @@
+the_ROM_image:
+{
+	Config_add_pblock_rp_instance_partial.bit
+}
+
+the_ROM_image:
+{
+	Config_mult_pblock_rp_instance_partial.bit
+}
+
+the_ROM_image:
+{
+	blanking_pblock_rp_instance_partial.bit
+}
