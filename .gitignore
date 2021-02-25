@@ -1,0 +1,13 @@
+hd_visual
+.Xil
+reconfig_peripheral_prj
+Bitstreams/*
+Checkpoint/*
+Implement/*
+Synth/reconfig_modules/*
+Synth/Static/*
+
+*.DS_Store
+
+usage_statistics_webtalk.html
+usage_statistics_webtalk.xml
