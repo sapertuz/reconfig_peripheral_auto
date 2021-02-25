@@ -6,12 +6,11 @@ Checkpoint/*
 Implement/*
 Synth/reconfig_modules/*
 Synth/Static/*
-<<<<<<< HEAD
 !*.placeholder
-=======
->>>>>>> c02e3884fb474aac2f5774a3c0c1df69badff1e8
 
 *.DS_Store
+BOOT.bin
+output.bif
 
 usage_statistics_webtalk.html
 usage_statistics_webtalk.xml

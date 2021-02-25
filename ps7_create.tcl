@@ -1,11 +1,11 @@
+# 1-1 -> 1-3 Create project add modules, decoupler, and make connections 
 start_gui
 
-# Create project
+## Create project
 create_project $project_name ./$project_name -force
 
-# Set project properties
+## Set project properties
 set obj [current_project]
-#set_property board_part em.avnet.com:zed:part0:1.2 $obj
 set_property board_part -value $board_name -objects $obj
 set_property ip_repo_paths $ip_repo_dir $obj
 
@@ -69,4 +69,24 @@ save_bd_design
 
 # I dont know why it creates this folder, I eliminate it
 file delete -force NA
+
+## Get device name from board
+set device_name [get_parts -of_objects [get_projects]]
+
+# 1-4 Synthesize project 
+set synth_name synth_1
+launch_runs $synth_name -j 4
+## Wait run
+wait_on_run $synth_name
+## Save dcp files in directory
+set dcpFiles [glob $proj_dir/$project_name.runs/*/*.dcp]
+foreach file $dcpFiles {
+   file copy -force $file $synth_static_dir
+}
+## Export HW
+update_compile_order -fileset sources_1
+file mkdir $sdk_dir
+write_hwdef -force  -file $sdk_dir/system_wrapper.hdf
+## Close project
+close_project
 
