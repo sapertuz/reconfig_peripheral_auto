@@ -9,6 +9,7 @@ Synth/Static/*
 !*.placeholder
 
 *.DS_Store
+*.log
 BOOT.bin
 output.bif
 

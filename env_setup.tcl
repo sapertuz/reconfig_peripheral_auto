@@ -35,11 +35,21 @@ set bitstr_dir "./Bitstreams"
 set sdk_dir $proj_dir/$project_name.sdk
 
 switch -exact $BOARD_GLOBAL {
-    PYNQ {set board_name "www.digilentinc.com:pynq-z1:part0:1.0"}
-    ZED {set board_name "em.avnet.com:zed:part0:1.2"}
+    PYNQ {  set board_name  "www.digilentinc.com:pynq-z1:part0:1.0"
+            set device_name "xc7z020clg400-1"}
+    ZED {   set board_name "digilentinc.com:zedboard:part0:1.0"
+            set device_name "xc7z020clg484-1"}
     default {set board_name "www.digilentinc.com:pynq-z1:part0:1.0"}
 }
-
+switch -exact $BOARD_GLOBAL {
+    PYNQ {  set slice_plan "SLICE_X34Y109:SLICE_X39Y123"
+            set dsp48_plan "DSP48_X2Y44:DSP48_X2Y47"}
+    ZED {   set slice_plan "SLICE_X34Y109:SLICE_X39Y123"
+            set dsp48_plan "DSP48_X2Y44:DSP48_X2Y47"}
+    ZYBO {  set slice_plan "SLICE_X8Y50:SLICE_X13Y64"
+            set dsp48_plan "DSP48_X0Y20:DSP48_X0Y25"}
+    default {}
+}
 set bd_design_name "system"
 set decouple_ip "xilinx.com:ip:pr_decoupler:1.0"
 ## Reconfig Module

@@ -38,9 +38,9 @@
 #define PARTIAL_MULT_ADDR   0x200000
 #define PARTIAL_ADDER_ADDR   0x300000
 #define PARTIAL_BLANK_ADDR   0x400000
-#define PARTIAL_MULT_BITFILE_LEN  0x1BC04 // in number of words
-#define PARTIAL_ADDER_BITFILE_LEN  0x1BC04 // in number of words
-#define PARTIAL_BLANK_BITFILE_LEN  0x1BC04 // in number of words
+#define PARTIAL_MULT_BITFILE_LEN  0x6c62 // in number of words
+#define PARTIAL_ADDER_BITFILE_LEN  0x6c62 // in number of words
+#define PARTIAL_BLANK_BITFILE_LEN  0x6c62 // in number of words
 #endif
 
 #ifdef ZED
