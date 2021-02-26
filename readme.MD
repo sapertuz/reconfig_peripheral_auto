@@ -38,9 +38,20 @@ source verify_configurations.tcl
 ```
 source generate_bitstreams.tcl
 ```
-### 7 Create SDK workspace and boot files
+### 7 Create app and boot files in sdk
+* First open a terminal and go to SDK installation folder and run `./xsct`
 ```
-source sdk_source.tcl
+$ cd $SDK_install_dir/bin
+$ ./xsct
+$ xsct% source sdk_setup.tcl
 ```
-## NOTE
-You can source `reconfig_master.tcl` to do all the steps automatically but I don't recomend this since the computer migth run out of memory
+## NOTES
+* You can source `reconfig_master.tcl` to do all the steps automatically. However, I don't recomend this since the computer migth run out of memory.
+* Every word are 32 bits and every byte are 8 bits. So, you need to divide the bin file size in bytes by four to get its length. In the example, the size is `110,984 bytes / 4 = 27,746 words -> 0x6c62 hex`
+
+At the end copy `BOOT.bin` (in the main folder), `blank.bin` (in the Bitstream folder) and `$reconf_mod_name.bin` (Also in the Bitstream folder, remember these ara as many as included in the array) in the SD card.
+
+## Relevant links
+* [TCL commands guide (Vivado 2019.1)](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2019_1/ug835-vivado-tcl-commands.pdf)
+* [XSCT reference guide (SDK 2019.1)](https://www.xilinx.com/support/documentation/sw_manuals/xilinx2019_1/ug1208-xsct-reference-guide.pdf)
+* [BOOTGEN user guide (SDK 2019.1)](/www.xilinx.com/support/documentation/sw_manuals/xilinx2019_1/ug1283-bootgen-user-guide.pdf)

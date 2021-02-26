@@ -18,10 +18,10 @@ write_checkpoint -force $chckpt_dir/$reconf_chckpt_name.dcp
 # 4 - 5 Define Reconfigurable Properties on each RM
 ## Here I have to check the size
 set pblock_name pblock_rp_instance
-set pblock_slice_dsp {SLICE_X34Y109:SLICE_X47Y124 DSP48_X2Y44:DSP48_X2Y49}
 startgroup
     create_pblock $pblock_name
-    resize_pblock $pblock_name -add $pblock_slice_dsp
+    resize_pblock $pblock_name -add $slice_plan
+    resize_pblock $pblock_name -add $dsp48_plan
     add_cells_to_pblock $pblock_name [get_cells [list system_i/$reconfig_ip_name/inst/$reconfig_top_label]] -clear_locs
 endgroup
 ## save pblock and properties

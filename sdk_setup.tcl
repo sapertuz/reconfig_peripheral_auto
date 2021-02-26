@@ -1,14 +1,17 @@
 # execute this script with this command "xsdk -batch -source sdk_setup.tcl"
-source start_variables.tcl
+source env_setup.tcl
 
 # delete the old except hdf
 set allfiles [glob -nocomplain $sdk_dir/*]
 set idX [lsearch $allfiles "$sdk_dir/system_wrapper.hdf"]
-set allfiles [lreplace $alldcp $idX $idX]
-catch {file delete -force $allfiles}
+set allfiles [lreplace $allfiles $idX $idX]
+foreach file_folder $allfiles {
+    catch {file delete -force -- $file_folder}
+}
+catch {file delete -force -- $sdk_dir/.metadata}
 
 # 10-1. Create workspace and import the project into
-setws $sdk_dir
+setws -switch $sdk_dir
 createhw -name hw -hwspec $sdk_dir/system_wrapper.hdf 
 
 # 10-2. Create a Board Support Package enabling generic FAT file system library
@@ -29,4 +32,5 @@ createapp -name fsbl -app {Zynq FSBL} -proc ps7_cortexa9_0 -hwproject hw -os sta
 projects -build
 
 # 10-5. Create a Zynq boot image.
+source create_bif_file.tcl
 exec bootgen -arch zynq -image output.bif -w -o BOOT.bin

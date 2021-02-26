@@ -70,9 +70,6 @@ save_bd_design
 # I dont know why it creates this folder, I eliminate it
 file delete -force NA
 
-## Get device name from board
-set device_name [get_parts -of_objects [get_projects]]
-
 # 1-4 Synthesize project 
 set synth_name synth_1
 launch_runs $synth_name -j 4
