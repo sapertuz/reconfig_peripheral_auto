@@ -6,8 +6,8 @@
 ### 1. Get in project directory clean file system (optional) and setup variables 
  ```
  cd $project dir
- source clean_file_system.tcl
  source env_setup.tcl
+ source clean_file_system.tcl
  ```
 NOTES: 
 * Inside env_setup.tcl you can chose the board
@@ -16,9 +16,10 @@ NOTES:
 ```
  source ps7_create.tcl
  ```
-### 3. Synthesize Reconfigurable modules
+### 3. Synthesize Reconfigurable modules and floorplan
 ```
 source synth_reconfig_modules.tcl
+source design_floorplanning.tcl
 ```
 NOTES
 * Here you should be carefull to pick the placement of the reconfigurable partition.

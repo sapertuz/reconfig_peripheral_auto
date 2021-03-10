@@ -48,12 +48,12 @@ startgroup
 ] [get_bd_cells pr_decoupler_0]
 endgroup
 
-apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $reconfig_ip_name/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins $reconfig_ip_name/$reconfig_ip_axi_port]
 
 # Make connections
 delete_bd_objs [get_bd_intf_nets ps7_0_axi_periph_M00_AXI]
 connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins pr_decoupler_0/s_intf_0]
-connect_bd_intf_net [get_bd_intf_pins pr_decoupler_0/rp_intf_0] [get_bd_intf_pins math_0/S_AXI]
+connect_bd_intf_net [get_bd_intf_pins pr_decoupler_0/rp_intf_0] [get_bd_intf_pins $reconfig_ip_name/$reconfig_ip_axi_port]
 connect_bd_net [get_bd_pins processing_system7_0/GPIO_O] [get_bd_pins pr_decoupler_0/decouple]
 
 # Validate design
