@@ -7,14 +7,14 @@
 
 # User Generated miscellaneous constraints 
 
-set_property HD.RECONFIGURABLE true [get_cells system_i/math_0/inst/math_v1_0_S_AXI_inst/rp_instance]
+set_property HD.RECONFIGURABLE true [get_cells system_i/ml_regressor_0/U0/ml_regressor_v1_0_S00_AXI_inst/my_regressor]
 
 # User Generated physical constraints 
 
 create_pblock pblock_rp_instance
-add_cells_to_pblock [get_pblocks pblock_rp_instance] [get_cells -quiet [list system_i/math_0/inst/math_v1_0_S_AXI_inst/rp_instance]]
-resize_pblock [get_pblocks pblock_rp_instance] -add {SLICE_X34Y109:SLICE_X39Y123}
-resize_pblock [get_pblocks pblock_rp_instance] -add {DSP48_X2Y44:DSP48_X2Y47}
+add_cells_to_pblock [get_pblocks pblock_rp_instance] [get_cells -quiet [list system_i/ml_regressor_0/U0/ml_regressor_v1_0_S00_AXI_inst/my_regressor]]
+resize_pblock [get_pblocks pblock_rp_instance] -add {SLICE_X52Y1:SLICE_X111Y48}
+resize_pblock [get_pblocks pblock_rp_instance] -add {DSP48_X3Y2:DSP48_X4Y17}
 
 # Vivado Generated miscellaneous constraints 
 
