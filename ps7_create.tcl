@@ -33,7 +33,7 @@ endgroup
 
 set obj_decoupler [get_bd_cells pr_decoupler_0]
 startgroup
-    create_bd_cell -type ip -vlnv xilinx.com:ip:pr_decoupler:1.0 pr_decoupler_0
+    create_bd_cell -type ip -vlnv xilinx.com:ip:dfx_decoupler:1.0 pr_decoupler_0
 endgroup
 startgroup
     set_property -dict [list CONFIG.ALL_PARAMS {HAS_SIGNAL_STATUS 0 HAS_SIGNAL_CONTROL 1 INTF {intf_0 {ID 0 VLNV xilinx.com:interface:aximm_rtl:1.0 PROTOCOL axi4lite MODE slave}}}\
@@ -83,6 +83,6 @@ foreach file $dcpFiles {
 ## Export HW
 update_compile_order -fileset sources_1
 file mkdir $sdk_dir
-write_hwdef -force  -file $sdk_dir/system_wrapper.hdf
+write_hw_platform -fixed -force -file $sdk_dir/system_wrapper.hdf
 ## Close project
 close_project

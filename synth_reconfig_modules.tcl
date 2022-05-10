@@ -1,5 +1,5 @@
 # 1-5 Synthesize RM
-foreach {n module} [array get reconf_mod_name] {
+foreach {module} [array get reconf_mod_name] {
     if {$hdl_lang == "vhdl"} {      read_vhdl [glob $r_modules_dir/rp_${module}/*] }
     if {$hdl_lang == "verilog"} {   read_verilog [glob $r_modules_dir/rp_${module}/*] }
     synth_design -mode out_of_context -flatten_hierarchy rebuilt -top $reconfig_top_name -part $device_name

@@ -6,6 +6,7 @@ Checkpoint/*
 Implement/*
 Synth/reconfig_modules/*
 Synth/Static/*
+Sources/xdc/*
 !*.placeholder
 
 *.DS_Store
@@ -15,3 +16,6 @@ output.bif
 
 usage_statistics_webtalk.html
 usage_statistics_webtalk.xml
+
+.ip_user_files
+*.xdc

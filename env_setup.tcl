@@ -1,3 +1,5 @@
+###--------------------------------------------------------###
+# Absolutely ALL of these parameters should be reviewed and changed 
 # Configurable Variables 
 set project_name "reconfig_peripheral_prj"
 ## (PYNQ ZYBO or ZED)
@@ -13,9 +15,9 @@ set reconfig_ip_name "math_0"
 set reconfig_top_name "rp"
 set reconfig_ip_axi_port "S_AXI"
 set reconfig_top_label "math_v1_0_S_AXI_inst/rp_instance"
-set reconfig_inst "U0"
+set reconfig_inst "inst"
 
-set hdl_lang "vhdl"
+set hdl_lang "verilog"
 
 set reconf_part_name "add_mult_synth"
 set reconf_chckpt_name "top_link_add"
@@ -36,7 +38,7 @@ set synth_reconfmod_dir "./Synth/reconfig_modules"
 set chckpt_dir "./Checkpoint"
 set impl_dir "./Implement"
 set bitstr_dir "./Bitstreams"
-set sdk_dir $proj_dir/$project_name.sdk
+set sdk_dir $proj_dir/$project_name.vitis
 
 switch -exact $BOARD_GLOBAL {
     PYNQ {  set board_name  "www.digilentinc.com:pynq-z1:part0:1.0"
