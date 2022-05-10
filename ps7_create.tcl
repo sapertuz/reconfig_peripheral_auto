@@ -86,4 +86,3 @@ file mkdir $sdk_dir
 write_hwdef -force  -file $sdk_dir/system_wrapper.hdf
 ## Close project
 close_project
-

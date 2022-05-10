@@ -11,6 +11,7 @@ array set reconf_mod_name {
 set reconfig_ip "xilinx.com:XUP:math:1.0"
 set reconfig_ip_name "math_0"
 set reconfig_top_name "rp"
+set reconfig_ip_axi_port "S_AXI"
 set reconfig_top_label "math_v1_0_S_AXI_inst/rp_instance"
 set reconfig_inst "U0"
 
