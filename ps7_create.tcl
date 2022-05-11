@@ -83,6 +83,6 @@ foreach file $dcpFiles {
 ## Export HW
 update_compile_order -fileset sources_1
 file mkdir $sdk_dir
-write_hw_platform -fixed -force -file $sdk_dir/system_wrapper.hdf
+write_hw_platform -fixed -force -file $sdk_dir/system_wrapper.xsa
 ## Close project
 close_project
